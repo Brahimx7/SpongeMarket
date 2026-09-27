@@ -1024,21 +1024,10 @@ saveProfileBtn.addEventListener("click" , async()=> {
               profileUsername.textContent = profile.username;
             navUsername.textContent = settingsUsername.value;
      
-             const toast = Toast(
-                "Username updated successfully."
-            );
+              Toast("Username updated successfully.","success" );
+                
+           
 
-            document.body.appendChild(toast);   
-
-            const button = toast.querySelector("button");
-
-            button.addEventListener("click", () => {
-                toast.remove();
-            });
-        
-            setTimeout(() => {
-                toast.remove();
-           }, 10000);
            settingsUsername.value= "";
          }
 
@@ -1064,26 +1053,8 @@ saveProfileBtn.addEventListener("click" , async()=> {
                   settingsEmail.value
                 );
 
-            const toast = Toast(
-                "A verification email has been sent to your new email address. Please verify it to complete the change."
-            );
-
-            document.body.appendChild(toast);   
-
-            const button = toast.querySelector("button");
-
-            button.addEventListener("click", () => {
-                toast.remove();
-            });
-        
-            setTimeout(() => {
-                toast.remove();
-           }, 10000);
-
-
-        
-
-            return;
+             Toast("A verification email has been sent to your new email address. Please verify it to complete the change.", "info");
+              return;
         }
 
       if(settingsBio.value){
@@ -1093,22 +1064,9 @@ saveProfileBtn.addEventListener("click" , async()=> {
         if(BioError){
             console.log(BioError);
         }
-          const toast = Toast(
-                "Bio updated successfully."
-            );
-
-            document.body.appendChild(toast);   
-
-            const button = toast.querySelector("button");
-
-            button.addEventListener("click", () => {
-                toast.remove();
-            });
-        
-            setTimeout(() => {
-                toast.remove();
-           }, 10000);
-        settingsBio.value="";
+         Toast("Bio updated successfully.","success");
+            settingsBio.value="";    
+           
       }
 
 
@@ -1138,42 +1096,15 @@ saveProfileBtn.addEventListener("click" , async()=> {
     }
 
     if (newPassword.value !== confirmPassword.value) {
-              const toast = Toast(
-                "Passwords do not match."
-            );
-
-            document.body.appendChild(toast);   
-
-            const button = toast.querySelector("button");
-
-            button.addEventListener("click", () => {
-                toast.remove();
-            });
-        
-            setTimeout(() => {
-                toast.remove();
-           }, 10000);
-        
-        return;
+            
+            Toast( "Passwords do not match.","warning"); 
+              return;
     }
 
     if (newPassword.value.length < 6) {
-         const toast = Toast(
-                "Password must be at least 6 characters."
-            );
-
-            document.body.appendChild(toast);   
-
-            const button = toast.querySelector("button");
-
-            button.addEventListener("click", () => {
-                toast.remove();
-            });
-        
-            setTimeout(() => {
-                toast.remove();
-           }, 10000);
-        return;
+     
+                  Toast("Password must be at least 6 characters.","warning");
+               return;
     }
 
     const { error } = await supabase.auth.updateUser({
@@ -1191,21 +1122,8 @@ saveProfileBtn.addEventListener("click" , async()=> {
     newPassword.value = "";
     confirmPassword.value = "";
 
-        const toast = Toast(
-                "Password updated successfully."
-            );
-
-            document.body.appendChild(toast);   
-
-            const button = toast.querySelector("button");
-
-            button.addEventListener("click", () => {
-                toast.remove();
-            });
-        
-            setTimeout(() => {
-                toast.remove();
-           }, 10000);
+         
+                 Toast("Password updated successfully.","success");   
 });         
 
 
@@ -1221,3 +1139,16 @@ logoutBtn.addEventListener("click", async () => {
 
     window.location.href = "./index.html";
 });
+
+
+
+
+const FooterSaved = params.get("userIdSavedProducts");
+if(FooterSaved){
+     favoritesBtn.click();
+}
+
+const userMessagesFooter = params.get("userIdMessages");
+if(userMessagesFooter){
+     messagesBtn.click();
+}

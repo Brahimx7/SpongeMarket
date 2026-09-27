@@ -19,7 +19,7 @@ signed?.addEventListener("submit", async (e) => {
     
       if (userpassword !== confirmpassword) { 
 
-        showToast("Passwords do not match!"); 
+       Toast("Passwords do not match!", "warning");
         return;
 
         }
@@ -32,12 +32,12 @@ signed?.addEventListener("submit", async (e) => {
 
   if (existingEmailError) {
     console.error("Error checking email:", emailCheckError);
-    showToast("Could not check the email. Please try again.");
+   Toast("Could not check the email. Please try again.", "error");
     return;
   }
 
   if (existingEmail) {
-    showToast("Email already exists");
+    Toast("Email already exists");
     return;
   }
 
@@ -60,13 +60,13 @@ signed?.addEventListener("submit", async (e) => {
 
                 if (error) { 
               
-                   showToast(error.message ,"try again later"); 
+                   Toast(error.message ,"try again later","error"); 
                    return; 
                     }  
 
                 if (!data.user) { 
             
-                   showToast("Signup failed. Please try again."); 
+                   Toast("Signup failed. Please try again.","error"); 
                    return;
 
                   }
@@ -84,7 +84,7 @@ signed?.addEventListener("submit", async (e) => {
          catch (error) {
             
             console.error("Signup error:", error); 
-            showToast("An unexpected error occurred."); 
+            Toast("An unexpected error occurred.","error"); 
         }
 
  });
@@ -116,19 +116,4 @@ signed?.addEventListener("submit", async (e) => {
 
          });
 
-  
-   function showToast(message) { 
-    
-         const toast = Toast(message); 
-         document.body.appendChild(toast);
-    
-          const button = toast.querySelector("button"); 
-    
-            button?.addEventListener("click", () =>  {
-                  toast.remove();
-                 }); 
-             
-               setTimeout(() => { toast.remove(); }, 5000); 
-            
-    }
 

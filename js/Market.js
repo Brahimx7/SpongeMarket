@@ -144,27 +144,6 @@ buttons.forEach(button => {
 
 
 
-const selectedCategory = params.get("category");
-
-if (selectedCategory) {
-   
-    buttons.forEach(button => {
-        if (button.textContent === selectedCategory) {
-
-            button.classList.add("active");
-        } else {
-            button.classList.remove("active");
-        }
-    });
-
-    const filteredProducts = products.filter(product =>{
-        return  product.category === selectedCategory;
-    });
-
-    renderProducts(filteredProducts);
-
-   
-}
 
 
 
@@ -363,3 +342,33 @@ reset.addEventListener("click", () => {
 
 
 });
+
+
+const selectedCategory = params.get("category");
+
+if (selectedCategory) {
+    categoryPanel.classList.remove("hidden");
+        categoryPanel.classList.add("shown");
+        categoryBtn.textContent = "📂 Categories ▲" ; 
+    buttons.forEach(button => {
+        if (button.textContent === selectedCategory) {
+          
+            button.classList.add("active");
+        } else {
+            button.classList.remove("active");
+        }
+    });
+
+    const filteredProducts = products.filter(product =>{
+        return  product.category === selectedCategory;
+    });
+
+    renderProducts(filteredProducts);
+   
+}
+const Footercategory = params.get("Footercategory");
+if(Footercategory){
+     categoryPanel.classList.remove("hidden");
+        categoryPanel.classList.add("shown");
+        categoryBtn.textContent = "📂 Categories ▲" ; 
+}

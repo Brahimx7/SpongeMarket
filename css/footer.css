@@ -1,13 +1,13 @@
  footer {
      text-align: center;
 
-     background:
-         linear-gradient(
-             145deg,
-             rgba(79, 124, 255, 0.08),
-             rgba(30, 20, 100, 0.25)
-         ),
-         hsl(244, 70%, 11%);
+      background:
+        linear-gradient(
+            145deg,
+            rgba(79, 124, 255, 0.04),
+            transparent
+        ),hsl(244, 70%, 10%);
+      
 
      color: #d9d9eb;
 
@@ -35,6 +35,78 @@
   footer p:hover {
      color: white;
  }
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.footer-brand {
+    max-width: 350px;
+}
+.footer-brand h2 {
+       color: #e8eaff;
+     cursor: pointer;
+     margin: 0 0 12px;
+     font-size: 28px;
+     transition:
+         transform 0.3s ease,
+         color 0.3s ease,
+         text-shadow 0.3s ease;
+}
+.footer-brand h2:hover {
+     color: #aeb5ff;
+
+     transform: translateY(-2px);
+
+     text-shadow:
+         0 0 18px rgba(79, 124, 255, 0.35);
+ }
+.footer-brand p {
+    margin: 0;
+    color: #aaaac4;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+     max-width: 350px;
+}
+.footer-section h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: white;
+}
+.footer-section a {
+    color: #aaaac4;
+    text-decoration: none;
+    font-size: 16px;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+        cursor: pointer;
+}
+.footer-section a:hover {
+    color: white;
+    transform: translateX(3px);
+}
+.footer-bottom {
+    max-width: 1100px;
+    margin: 40px auto ;
+    padding-top: 20px;
+    border-top: 1px solid rgba(220, 210, 210, 0.386);
+    text-align: center;
+}
+.footer-bottom p {
+    margin: 0;
+    color: #777795;
+    font-size: 18px;
+}
 @media (max-width: 768px){
     footer{
         padding: 15px;

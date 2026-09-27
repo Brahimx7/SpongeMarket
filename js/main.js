@@ -26,9 +26,6 @@ links.forEach(link => {
 if (foot) foot.innerHTML = Footer();
 
 
-
-
-
 const explore = document.getElementById("startexploring");
 if(explore) {
     explore.addEventListener("click" , ()=>{
@@ -49,54 +46,11 @@ const {
     postBtn?.addEventListener("click", () => {
         console.log("Button clicked!");
         if (!user) {
-        const toast = Toast(
-         "You need an account to use this feature. Please sign up first."
-           );
-         document.body.appendChild(toast);
-        const button = toast.querySelector("button");
-         button.addEventListener("click", () => { 
-              toast.remove();
-              return;
-         });
-         setTimeout( () => {
-            toast.remove();
-         },10000);
-        return ;
+        Toast("You need an account to use this feature. Please sign up first.", "warning");
+         return ;
        }
         window.location.href = "postproduct.html";
     });
-
-/*
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-
-if (currentUser) {
-
-    loginLink.textContent = "Logout";
-    signupLink.textContent = `👤${currentUser.username}`;
-
-     loginLink.addEventListener("click" , (e)=>{
-       e.preventDefault();
-        localStorage.removeItem("currentUser");
-        window.location.href="index.html";
-    });
-
-}
-const users = JSON.parse(localStorage.getItem("usersdata")) || [];
-const userproducts = JSON.parse(localStorage.getItem("products")) || [];
-const usersNumber = document.getElementById("usersCount");
-const productsNumber = document.getElementById("productsCount");
-
-const Allproducts = [...userproducts,...products];
-
-
-if (usersNumber) {
-    usersNumber.textContent = users.length;
-}
-
-if (productsNumber) {
-    productsNumber.textContent = Allproducts.length;
-}*/
 
 const signupLink = document.getElementById("signupLink");
 const loginLink = document.getElementById("loginLink");
@@ -141,10 +95,6 @@ if (user) {
     }
 
    
-  
-
-
-
 
 
 
@@ -187,17 +137,8 @@ const homeSearch = document.getElementById("homeSearch");
         if (e.key === "Enter") {
                 
              if(homeSearch.value.trim() === ""){
-                   const toast = Toast("We couldn't find any products matching your search.");
-                   document.body.appendChild(toast);
-                   const button = toast.querySelector("button");
-                   button.addEventListener("click", ()=>{
-                    toast.remove();
-                    return;
-                   });
-                   setTimeout(()=>{
-                    toast.remove();
-                   },5000);
-                    return;
+                Toast("We couldn't find any products matching your search.", "info");
+                       return ;
                }
 
             const value = homeSearch.value.trim();
@@ -223,3 +164,50 @@ categories.forEach(categorie => {
 });
 
 
+const brandBtn = document.getElementById("brandBtn");
+brandBtn?.addEventListener("click",() => {
+window.location.href="index.html";
+});
+
+const footerMarketBtn = document.getElementById("footerMarketBtn");
+footerMarketBtn?.addEventListener("click",() => {
+window.location.href="Market.html?Footercategory=All";
+});
+
+
+const footerSavedBtn = document.getElementById("footerSavedBtn");
+footerSavedBtn?.addEventListener("click",()=>{
+if(!user){
+    Toast("You need an account to use this feature. Please sign up first.", "warning");
+        return ;
+
+}
+window.location.href=`userProfile.html?userIdSavedProducts=${user.id}`;
+});
+
+const FooterMessagesBtn = document.getElementById("FooterMessagesBtn");
+FooterMessagesBtn?.addEventListener("click",()=>{
+  if(!user){
+        Toast("You need an account to use this feature. Please sign up first.", "warning");
+        return ;
+}
+window.location.href=`userProfile.html?userIdMessages=${user.id}`;
+});
+
+const FooterPostBtn = document.getElementById("FooterPostBtn");
+FooterPostBtn?.addEventListener("click",()=>{
+  if(!user){
+ Toast("You need an account to use this feature. Please sign up first.", "warning");
+ return ;
+}
+window.location.href=`postproduct.html`;
+});
+
+const FooterProfileBtn = document.getElementById("FooterProfileBtn");
+FooterProfileBtn?.addEventListener("click",()=>{
+  if(!user){
+ Toast("You need an account to use this feature. Please sign up first.", "warning");
+ return ;
+}
+window.location.href=`userProfil.html`;
+});
