@@ -3,7 +3,7 @@ export function Navbar(){
     <nav class="navbar">
 
       <div class="logo">
-       <h2>QuickMarket</h2>
+       <h2>SpongeMarket</h2>
       </div>
 
     

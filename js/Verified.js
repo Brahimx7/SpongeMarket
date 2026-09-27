@@ -109,7 +109,7 @@ async function init() {
            loadingCard.classList.add("hidden");
            successCard.classList.remove("hidden");
 
-           welcomeMsg.textContent = `Welcome to QuickMarket, ${username}!`; 
+           welcomeMsg.textContent = `Welcome to SpongeMarket, ${username}!`; 
           }
 
           } catch (error) {
