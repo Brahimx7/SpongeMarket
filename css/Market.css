@@ -33,12 +33,31 @@ html {
     min-width: 0;
 }
 .market-header{
-
+     position: relative;
     text-align:center;
    animation: fadeUp 0.7s ease both;
     margin-bottom:60px;
 }
+.SVG{
+    width: 430px;
+    height: auto;
+    position: absolute;
+    left: -180px;
+    top: -10px;
+     object-fit: contain;
+    animation: float 4.5s ease-in-out infinite;
+     filter: drop-shadow(0 20px 40px rgba(38, 10, 103, 0.841))
+          drop-shadow(0 0 25px rgba(79,124,255,0.45));
+}
+.f1 { animation: fl 6s ease-in-out infinite; }
+.f2 { animation: fl 4.5s ease-in-out infinite; }
+.f3 { animation: fl 3.6s ease-in-out infinite; }
+.f4 { animation: fl 5.2s ease-in-out infinite; }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
 .market-header h1{
 
     font-size:4rem;
@@ -626,6 +645,9 @@ transform: translateY(-4px);
         font-size: .9rem;
     }
 
+    .SVG{
+        display: none;
+    }
 }
 
 @media (max-width: 380px) {
@@ -753,5 +775,8 @@ transform: translateY(-4px);
         margin: 8px;
         height: 36px;
         font-size: 12px;
+    }
+    .SVG{
+        display: none;
     }
 }

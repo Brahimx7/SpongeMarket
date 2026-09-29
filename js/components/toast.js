@@ -17,7 +17,7 @@ export function Toast(message, type = "info") {
         </div>
     `;
 
-    // FIX: Append to toastContainer instead of document.body
+
     toastContainer.appendChild(toast);
 
     const closeButton = toast.querySelector(".toast-close");
@@ -28,7 +28,6 @@ export function Toast(message, type = "info") {
 
         setTimeout(() => {
             toast.remove();
-            // Optional: clean up empty container
             if (toastContainer && toastContainer.children.length === 0) {
                 toastContainer.remove();
             }

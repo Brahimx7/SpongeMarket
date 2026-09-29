@@ -16,7 +16,7 @@
     <main class="market">
 
     <div class="market-header">
-
+    
         <h1>Marketplace</h1>
 
         <p>Browse thousands of products from trusted sellers.</p>
@@ -30,7 +30,101 @@
             <button id="searchBtn">Search</button>
 
         </div>
+         <div class="SVG">
+<svg  viewBox="0 0 600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .f1{animation:fl 6s ease-in-out infinite}
+    .f2{animation:fl 4.5s ease-in-out infinite}
+    .f3{animation:fl 3.6s ease-in-out infinite}
+    .f4{animation:fl 5.2s ease-in-out infinite}
+    @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  </style>
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#7C6FF7" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#7C6FF7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="top" x1="250" y1="200" x2="410" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C4BDFF"/><stop offset="1" stop-color="#9D94FF"/>
+    </linearGradient>
+    <linearGradient id="left" x1="250" y1="245" x2="330" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6E63E8"/><stop offset="1" stop-color="#4E45B8"/>
+    </linearGradient>
+    <linearGradient id="right" x1="330" y1="245" x2="410" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B81F2"/><stop offset="1" stop-color="#665AD6"/>
+    </linearGradient>
+    <linearGradient id="bag" x1="100" y1="252" x2="200" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A79DFF"/><stop offset="1" stop-color="#7B70EE"/>
+    </linearGradient>
+    <linearGradient id="tag" x1="-50" y1="-22" x2="38" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD66E"/><stop offset="1" stop-color="#FFB03A"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="425" y1="273" x2="479" y2="327" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE08A"/><stop offset="1" stop-color="#F5B83D"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
 
+  <!-- ambient glow + orbit -->
+  <ellipse cx="300" cy="270" rx="260" ry="220" fill="url(#glow)"/>
+  <ellipse cx="300" cy="275" rx="255" ry="110" transform="rotate(-12 300 275)" stroke="#8B81F2" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="3 10" stroke-linecap="round"/>
+
+  <!-- ground shadow -->
+  <ellipse cx="330" cy="412" rx="105" ry="16" fill="#05040F" opacity="0.5" filter="url(#soft)"/>
+
+  <!-- package box -->
+  <g class="f1">
+    <path d="M330 200 L410 245 L330 290 L250 245 Z" fill="url(#top)"/>
+    <path d="M250 245 L330 290 L330 390 L250 345 Z" fill="url(#left)"/>
+    <path d="M330 290 L410 245 L410 345 L330 390 Z" fill="url(#right)"/>
+    <path d="M322 204.5 L338 204.5 L338 285.5 L322 285.5 Z" fill="#E9E5FF" opacity="0.55"/>
+    <path d="M322 285.5 L338 285.5 L338 385.5 L322 385.5 Z" fill="#DCD6FF" opacity="0.35"/>
+    <path d="M263 283 L293 300 L293 332 L263 315 Z" fill="#FFFFFF" opacity="0.22"/>
+    <path d="M269 292 L287 302" stroke="#1B1840" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+    <path d="M269 302 L287 312" stroke="#1B1840" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- shopping bag -->
+  <g class="f2">
+    <rect x="100" y="252" width="100" height="108" rx="16" fill="url(#bag)"/>
+    <path d="M125 254 C125 214 175 214 175 254" stroke="#D9D4FF" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <circle cx="150" cy="312" r="15" fill="#17153C" opacity="0.35"/>
+    <path d="M144 312 L149 317 L157 308" stroke="#EDE9FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- price tag -->
+  <g class="f3">
+    <g transform="translate(478 132) rotate(18)">
+      <path d="M-50 -22 H6 L38 0 L6 22 H-50 A8 8 0 0 1 -58 14 V-14 A8 8 0 0 1 -50 -22 Z" fill="url(#tag)"/>
+      <circle cx="-38" cy="0" r="5.5" fill="#14122F"/>
+    </g>
+  </g>
+
+  <!-- coins -->
+  <g class="f4">
+    <circle cx="452" cy="300" r="27" fill="url(#coin)"/>
+    <circle cx="452" cy="300" r="20" stroke="#B97F1E" stroke-width="2.5" stroke-opacity="0.6" fill="none"/>
+    <text x="452" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#9C6A12">$</text>
+  </g>
+  <g class="f3">
+    <circle cx="130" cy="180" r="19" fill="#8B81F2"/>
+    <circle cx="130" cy="180" r="13.5" stroke="#4E45B8" stroke-width="2" stroke-opacity="0.7" fill="none"/>
+    <text x="130" y="186.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#37307E">$</text>
+  </g>
+
+  <!-- sparkles + dots -->
+  <g class="f2"><path d="M0 -16 C2 -4 4 -2 16 0 C4 2 2 4 0 16 C-2 4 -4 2 -16 0 C-4 -2 -2 -4 0 -16 Z" transform="translate(215 130)" fill="#DCD6FF"/></g>
+  <g class="f4"><path d="M0 -11 C1.4 -2.8 2.8 -1.4 11 0 C2.8 1.4 1.4 2.8 0 11 C-1.4 2.8 -2.8 1.4 -11 0 C-2.8 -1.4 -1.4 -2.8 0 -11 Z" transform="translate(505 215)" fill="#BDB4FF"/></g>
+  <g class="f3"><path d="M0 -9 C1.2 -2.3 2.3 -1.2 9 0 C2.3 1.2 1.2 2.3 0 9 C-1.2 2.3 -2.3 1.2 -9 0 C-2.3 -1.2 -1.2 -2.3 0 -9 Z" transform="translate(555 260)" fill="#9D94FF"/></g>
+  <circle cx="500" cy="330" r="4" fill="#8B81F2" opacity="0.6"/>
+  <circle cx="90" cy="240" r="3.5" fill="#8B81F2" opacity="0.5"/>
+  <circle cx="430" cy="90" r="4.5" fill="#BDB4FF" opacity="0.6"/>
+  <circle cx="180" cy="440" r="3.5" fill="#8B81F2" opacity="0.4"/>
+</svg>
+         </div>
+    
     </div>
 
 

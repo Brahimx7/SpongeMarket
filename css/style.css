@@ -27,6 +27,7 @@ body{
     background-color: hsl(244, 88%, 8%);
     color: var(--text);
     overflow-x: hidden;
+    
 }
 .intro{
      color: var(--text);
@@ -52,6 +53,8 @@ body{
     animation: fadeUp 0.8s ease 0.2s both;
 }
 .Search{
+     position: relative;
+    display: inline-block;
     margin-top: 40px;
 }
 .Search input{
@@ -70,7 +73,22 @@ body{
         border-color 0.3s ease,
         box-shadow 0.3s ease,
         transform 0.3s ease;
+     position: relative;
+    z-index: 1000;
 }
+#neonSponge {
+    position: absolute;
+    z-index: 1;
+    width: 450px;
+    height: auto;
+    right: -80px;
+    bottom: 30px;
+    object-fit: contain;
+    animation: floatSponge 4.5s ease-in-out infinite;
+     filter: drop-shadow(0 20px 40px rgba(38, 10, 103, 0.841))
+          drop-shadow(0 0 25px rgba(79,124,255,0.45));
+}
+
 .Search input:focus{
     outline: none;
      border-color: var(--primary);
@@ -88,7 +106,9 @@ body{
     transform: translateY(-2px);
 }
 
-
+.intr{
+    width: 520px;
+}
 
 .intr button,
 .sell button {
@@ -401,6 +421,11 @@ body{
 
 
 
+/*animation: floatSponge 4.5s ease-in-out infinite;*/
+@keyframes floatSponge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
 /* =========================
    ANIMATIONS
 ========================= */
@@ -485,6 +510,9 @@ body{
 }
 .Search input{
     width: 300px;
+}
+.intr{
+    width: 320px;
 }
 }
 
