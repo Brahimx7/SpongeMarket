@@ -102,9 +102,6 @@ async function init() {
 
               localStorage.setItem("verificationComplete", "true");
 
-           console.log("USER:", user);
-           console.log("USERNAME:", username);
-           console.log("USER INSERTED SUCCESSFULLY");
 
            loadingCard.classList.add("hidden");
            successCard.classList.remove("hidden");

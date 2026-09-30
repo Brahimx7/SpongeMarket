@@ -1,7 +1,7 @@
 import { supabase } from "./supabase.js";
 
 const productsGrid = document.getElementById("productsGrid");
-
+const illustrations = document.getElementById("illustrations");
 const { data: products, error } = await supabase
     .from("products")
     .select("*");
@@ -18,12 +18,13 @@ function renderProducts(productsArray){
      const title = document.getElementById("prod");
     if (productsArray.length === 0) {
         title.textContent = "No Products available";
-
+        illustrations.classList.remove("hidden");
+        illustrations.classList.add("illustrations");
         return;
     }
 
     title.textContent = "Products";
-
+     illustrations.classList.add("hidden");
 
 
             let html = "";
@@ -77,7 +78,9 @@ renderProducts(allProducts);
 
     searchBtn.addEventListener("click", () => {
         const value = searchInput.value.toLowerCase();
-
+          buttons.forEach(button => {
+            button.classList.remove("active");
+           });
         const filteredProducts = products.filter(product =>
             product.title.toLowerCase().includes(value)
         );
@@ -87,6 +90,10 @@ renderProducts(allProducts);
 
      searchInput?.addEventListener("keydown",(e)=>{
           if(e.key === "Enter"){
+            resetPriceFilter();resetletter();
+           buttons.forEach(button => {
+            button.classList.remove("active");
+           });
             const value = searchInput.value.toLowerCase();
               const filteredProducts = products.filter(product =>
                    product.title.toLowerCase().includes(value)
@@ -242,7 +249,7 @@ buttons.forEach(button => {
         }else{
             button.classList.remove("active");
         }
-
+        
 
 });
 }

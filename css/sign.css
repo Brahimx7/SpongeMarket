@@ -9,10 +9,10 @@ html {
 }
 
 body {
-    margin: 0;
+   
     background-color: hsl(244, 88%, 8%);
     color: white;
-    font-family: Arial, sans-serif;
+    
 }
 
 .signup-page {
@@ -303,7 +303,11 @@ body {
     display:none;
 }
 
-
+#defaultAvatar{
+    height: auto;
+    width: 100px;
+    border-radius: 50%;
+}
 @keyframes successFade {
     from {
         opacity: 0;

@@ -4,8 +4,20 @@ import { Toast } from "./components/toast.js";
 const signed = document.getElementById("signinform");
 const successful_email_panel = document.getElementById("successful_email_panel");
  const close = document.getElementById("close");
- 
 
+ const pass = document.getElementById("pass");
+const showpass = document.getElementById("showpass");
+
+const confpass = document.getElementById("confpass");
+const showconfpass = document.getElementById("showconfpass");
+
+showpass.addEventListener("change", () => {
+    pass.type = showpass.checked ? "text" : "password";
+});
+
+showconfpass.addEventListener("change", () => {
+    confpass.type = showconfpass.checked ? "text" : "password";
+});
 
 signed?.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -24,22 +36,18 @@ signed?.addEventListener("submit", async (e) => {
 
         }
 
-       const { data: existingEmail, error: existingEmailError } = await supabase
-        .from("users")
-         .select("id")
-          .eq("email", useremail)
-            .maybeSingle();
+       const { data: emailExists, error } = await supabase.rpc("email_exists", {check_email: useremail});
+       if (error) {
+          console.error("Error checking email:", error);
+          Toast("Could not check the email. Please try again.", "error");
+          return;
+        }
+        console.log(emailExists);
+        if (emailExists) {
+            Toast("Email already exists", "error");
+            return;
+        }
 
-  if (existingEmailError) {
-    console.error("Error checking email:", emailCheckError);
-   Toast("Could not check the email. Please try again.", "error");
-    return;
-  }
-
-  if (existingEmail) {
-    Toast("Email already exists");
-    return;
-  }
 
     try {
         localStorage.removeItem("verificationComplete");
@@ -56,7 +64,7 @@ signed?.addEventListener("submit", async (e) => {
                      }     
               }
 
-                                                           );
+                          );                                 
 
                 if (error) { 
               

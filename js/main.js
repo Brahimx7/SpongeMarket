@@ -1,10 +1,8 @@
 "use strict";
-
 import { Navbar }  from './components/nav.js';
 import { Footer } from "./components/footer.js";
 import { supabase } from "./supabase.js";
 import { Toast } from "./components/toast.js" ; 
-//import { products } from './data/products.js'
 
 const nav = document.getElementById("nav");
 const foot = document.getElementById("foot");
@@ -30,9 +28,8 @@ const explore = document.getElementById("startexploring");
 if(explore) {
     explore.addEventListener("click" , ()=>{
         window.location.href="Market.html"
-    }
+    });
 
-)
 }
 
 const postBtn = document.getElementById("postBtn");
@@ -44,9 +41,8 @@ const {
  
 
     postBtn?.addEventListener("click", () => {
-        console.log("Button clicked!");
         if (!user) {
-        Toast("You need an account to use this feature. Please sign up first.", "warning");
+         Toast("You need an account to use this feature. Please sign up first.", "warning");
          return ;
        }
         window.location.href = "postproduct.html";
@@ -54,9 +50,6 @@ const {
 
 const signupLink = document.getElementById("signupLink");
 const loginLink = document.getElementById("loginLink");
-
-
-console.log(user);
 
 if (user) {
 
@@ -88,7 +81,7 @@ if (user) {
 
                     await supabase.auth.signOut();
                      window.location.href = "index.html";
-         });
+                   });
 
 
        

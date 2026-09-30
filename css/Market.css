@@ -49,14 +49,26 @@ html {
      filter: drop-shadow(0 20px 40px rgba(38, 10, 103, 0.841))
           drop-shadow(0 0 25px rgba(79,124,255,0.45));
 }
-.f1 { animation: fl 6s ease-in-out infinite; }
-.f2 { animation: fl 4.5s ease-in-out infinite; }
-.f3 { animation: fl 3.6s ease-in-out infinite; }
-.f4 { animation: fl 5.2s ease-in-out infinite; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
+}
+.illustrations {
+    position: relative;
+    height: 200px;
+}
+#SadSponge{
+    width: 520px;
+    position: absolute;
+    left: 130px;
+    filter: drop-shadow(5px 20px 30px rgba(99, 116, 174, 0.911));
+}
+#SadPatrick{
+    width: 520px;
+    position: absolute;
+    left: 320px;
+    filter: drop-shadow(5px 20px 30px rgba(99, 116, 174, 0.911));
 }
 .market-header h1{
 
@@ -648,6 +660,15 @@ transform: translateY(-4px);
     .SVG{
         display: none;
     }
+
+    #SadSponge{
+    width: 420px;
+    left: -130px;
+}
+#SadPatrick{
+    width: 420px;
+    left: -70px;
+}
 }
 
 @media (max-width: 380px) {
