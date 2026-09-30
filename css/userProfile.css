@@ -785,7 +785,61 @@ body{
     box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.1);
 }
 
-
+#Title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 40px;
+}
+#illustrations {
+    position: relative;
+    height: 300px;
+}
+#illustrations2 {
+    position: relative;
+    height: 350px;
+}
+#sadMrKrabs{
+    width: 570px;
+    position: absolute;
+    left: -30px;
+    top: -20px;
+    filter: drop-shadow(5px 20px 30px rgba(99, 116, 174, 0.911));
+}
+#sadSquidward{
+    width: 570px;
+    position: absolute;
+    left: -30px;
+    top: 50px;
+    filter: drop-shadow(5px 20px 30px rgba(99, 116, 174, 0.911));
+}
+#messageIcon{
+   width: 300px;
+   height: 180px;
+    position: absolute;
+    left: 310px; 
+    top: -70px;
+}
+#messageIcon2{
+   width: 300px;
+   height: 180px;
+    position: absolute;
+    left: 310px; 
+    top: -40px;
+}
+#noProductsPosted{
+    font-size: 18px;
+    position: absolute;
+    left: 380px;
+    top: -30px;
+    color: rgba(236, 232, 239, 0.734);
+}
+#noProductsSaved{
+    font-size: 20px;
+    position: absolute;
+    left: 390px;
+    top: 5px;
+    color: rgba(236, 232, 239, 0.734);
+}
 @keyframes pageEnter {
      from { opacity: 0; }
       to { opacity: 1; }
@@ -1122,6 +1176,51 @@ body{
         padding: 11px 12px;
         font-size: 13px;
     }
+
+
+    #Title{
+    font-size: 22px;
+    }
+#illustrations {
+    height: 300px;
+}
+#illustrations2 {
+    height: 350px;
+}
+#sadMrKrabs{
+    width: 450px;
+    left: -140px;
+    top: 20px;
+}
+#sadSquidward{
+  width: 450px;
+    left: -140px;
+    top: 40px;
+}
+#messageIcon{
+   width: 220px;
+   height: 150px;
+    left: 110px; 
+    top: -40px;
+}
+#messageIcon2{
+  width: 220px;
+   height: 150px;
+    left: 110px; 
+    top: -20px;
+}
+#noProductsPosted{
+    font-size: 14px;
+    left: 160px;
+    top: 0px;
+}
+#noProductsSaved{
+    font-size: 15px;
+    left: 160px;
+    top: 15px;
+}
+
+
 }
 @media (max-width: 380px) {
 

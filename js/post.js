@@ -1,5 +1,5 @@
 import { supabase } from "./supabase.js";
-
+import { Toast } from "./components/toast.js" ; 
 const postBtn = document.getElementById("postBtn");
 
 const params = new URLSearchParams(window.location.search);
@@ -55,7 +55,6 @@ const form = document.getElementById('productForm');
                                data: { user },
                              } = await supabase.auth.getUser();
                              
-                        console.log(user);
                              if (!user) {
                                alert("Please log in first.");
                                return;
@@ -94,9 +93,7 @@ const form = document.getElementById('productForm');
 
                imageUrl = imageData.publicUrl;
               }
-         console.log(editProductId);
-         console.log(user.id);
-
+       
 
          const { data, error: updateError } = await supabase
          .from("products")
@@ -110,8 +107,7 @@ const form = document.getElementById('productForm');
            phone,
            image: imageUrl,
          })
-         .eq("id", editProductId)
-         .select();
+         .eq("id", editProductId);
 
            if(updateError){
              console.log(updateError);
@@ -125,7 +121,7 @@ else{
                         
                       
                           if (!imageFile) {
-                            alert("Please select an image.");
+                             Toast("Please select an image.", "warning");
                             return;
                           }
 
@@ -167,40 +163,10 @@ else{
                                    return;
                                }
 
-                             
-                         console.log("Product published successfully!");
-
-                     //   const reader = new FileReader();
-
-                      //  reader.readAsDataURL(imageFile);
-
-                      //  reader.onload = () => {
-                         //   const imageBase64 = reader.result;
-                         //   console.log(imageBase64);
-
-                        /*    const newProduct = {
-                            id: Date.now(),
-                            title,
-                            price: Number(price),
-                            category,
-                            location,
-                            seller,
-                            condition,
-                            image: imageUrl,
-                            description,
-                            phone
-                        };
-
-                        
-          const userProducts = JSON.parse(localStorage.getItem("products")) || [];
-          userProducts.push(newProduct);
-
-          localStorage.setItem("products", JSON.stringify(userProducts));*/
-
 
 }
                   
-                           window.location.href = "Market.html";
+                           window.location.href = "index.html";
 });
 
 

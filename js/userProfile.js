@@ -50,14 +50,14 @@ await supabase.from("products").select("*").eq("user_id",user.id);
 if (productsError) {
     console.error(productsError);
 }
-
+const illustrations = document.getElementById("illustrations");
 
 if (products.length === 0) {
-    productdiv.innerHTML = "<p>You haven't posted any products yet.</p>";
+    illustrations.classList.remove("hidden");
 }
 
 else {
-
+   illustrations.classList.add("hidden");
      
     let html = "";
  profileproducts.textContent = products.length;
@@ -298,7 +298,13 @@ favoritesBtn.addEventListener("click", async () => {
          }
        const productIds = savedproducts.map(item => item.product_id);
        if (productIds.length === 0) {
-          favoritesSection.innerHTML = "<p class='no-favorites'>You haven't saved any products yet.</p>";
+          favoritesSection.innerHTML = `
+                     <div id="illustrations2"> 
+                      <img src="AvatarImg/sadSquidward.png" alt="NoProducts" id="sadSquidward">
+                       <img src="AvatarImg/message.png" alt="messageIcon" id="messageIcon2">
+                       <p id="noProductsSaved">You haven't saved <br>any products yet.</p>
+                      </div>` 
+                     ;
            return;
           }
 
