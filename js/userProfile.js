@@ -307,6 +307,12 @@ favoritesBtn.addEventListener("click", async () => {
                      ;
            return;
           }
+          else{
+            const illustrations2 = document.getElementById("illustrations2");
+            if(illustrations2){
+              illustrations2.classList.add("hidden");
+            }
+          }
 
 
        const { data : productssaved , error : productssavedError} = await supabase.from("products").select("*").in("id",productIds);
