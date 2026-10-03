@@ -798,6 +798,10 @@ body{
     position: relative;
     height: 350px;
 }
+#illustrations3{
+    position: relative;
+    height: 350px;
+}
 #sadMrKrabs{
     width: 570px;
     position: absolute;
@@ -812,6 +816,13 @@ body{
     top: 50px;
     filter: drop-shadow(5px 20px 30px rgba(99, 116, 174, 0.911));
 }
+#Plankton{
+    width: 620px;
+    position: absolute;
+    left: -30px;
+    top: -20px;
+    filter: drop-shadow(5px 20px 30px rgba(99, 116, 174, 0.911));
+}
 #messageIcon{
    width: 300px;
    height: 180px;
@@ -821,6 +832,13 @@ body{
 }
 #messageIcon2{
    width: 300px;
+   height: 180px;
+    position: absolute;
+    left: 310px; 
+    top: -40px;
+}
+#messageIcon3{
+   width: 330px;
    height: 180px;
     position: absolute;
     left: 310px; 
@@ -839,6 +857,14 @@ body{
     left: 390px;
     top: 5px;
     color: rgba(236, 232, 239, 0.734);
+}
+#noConversationAvailable{
+    font-size: 17px;
+    position: absolute;
+    left: 380px;
+    top: 3px;
+    color: rgba(236, 232, 239, 0.734);
+    width: 400px;
 }
 @keyframes pageEnter {
      from { opacity: 0; }
@@ -1187,6 +1213,9 @@ body{
 #illustrations2 {
     height: 350px;
 }
+#illustrations3 {
+    height: 350px;
+}
 #sadMrKrabs{
     width: 450px;
     left: -140px;
@@ -1196,6 +1225,12 @@ body{
   width: 450px;
     left: -140px;
     top: 40px;
+}
+#Plankton{
+  width: 650px;
+    left: -210px;
+    top: 40px;
+    margin-bottom: 20px;
 }
 #messageIcon{
    width: 220px;
@@ -1209,6 +1244,12 @@ body{
     left: 110px; 
     top: -20px;
 }
+#messageIcon3{
+   width: 280px;
+   height: 180px;
+    left: 110px; 
+    top: -40px;
+}
 #noProductsPosted{
     font-size: 14px;
     left: 160px;
@@ -1216,6 +1257,11 @@ body{
 }
 #noProductsSaved{
     font-size: 15px;
+    left: 160px;
+    top: 15px;
+}
+#noConversationAvailable{
+    font-size: 14px;
     left: 160px;
     top: 15px;
 }
@@ -1278,4 +1324,24 @@ body{
         padding: 9px 11px;
         font-size: 12px;
     }
+
+   #Plankton{
+  width: 500px;
+    left: -170px;
+    top: 40px;
+}
+
+#messageIcon3{
+   width: 260px;
+   height: 150px;
+    left: 85px; 
+    top: -40px;
+}
+
+    #noConversationAvailable{
+    font-size: 13px;
+    left: 140px;
+    top: 5px;
+    width: 300px;
+}
 }

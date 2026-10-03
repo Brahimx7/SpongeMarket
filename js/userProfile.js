@@ -942,8 +942,42 @@ async function openMessages() {
           messageInput.value = "";
            messagesContainer.scrollTop = messagesContainer.scrollHeight;
        });                                                  
+const { data : userConversations , error : userConversationsError} = await supabase.from("conversations").select("*").or(`buyer_id.eq.${user.id},seller_id.eq.${user.id}`);
+if(userConversationsError){
+    console.log(userConversationsError);
+   
+}
+messagesBtn.addEventListener("click", async ()=>{
+       if(userConversations.length === 0){
+          removeActiveClasses();
+                    const wasHiddenmessages = messagesSection.classList.contains("hidden");       
+                    hideSections();
 
-messagesBtn.addEventListener("click", openMessages);
+                    if (wasHiddenmessages) {
+                          messagesSection.classList.remove("hidden");
+                        messagesSection.classList.add("section");
+                                            }
+                      if (!wasHiddenmessages) {
+                            return;
+                            }                    
+         messagesSection.innerHTML = `
+                     <div id="illustrations3"> 
+                      <img src="AvatarImg/Plankton.png" alt="NoProducts" id="Plankton">
+                       <img src="AvatarImg/message.png" alt="messageIcon" id="messageIcon3">
+                       <p id="noConversationAvailable">No conversations yet. <br>Start connecting with sellers!.</p>
+                      </div>` 
+                     ;
+           return;
+          }
+          else{
+            const illustrations3 = document.getElementById("illustrations3");
+            if(illustrations3){
+              illustrations3.classList.add("hidden");
+            }
+            await openMessages();
+          }
+  
+   });
 
  if (conversationId) {  await openMessages(); }
                                                          
